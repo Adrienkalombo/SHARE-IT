@@ -1,0 +1,29 @@
+<h1>Listing quandaries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quandaries.each do |quandary| %>
+      <tr>
+        <td><%= quandary.title %></td>
+        <td><%= quandary.description %></td>
+        <td><%= quandary.rating %></td>
+        <td><%= link_to 'Show', quandary %></td>
+        <td><%= link_to 'Edit', edit_quandary_path(quandary) %></td>
+        <td><%= link_to 'Destroy', quandary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quandary', new_quandary_path %>

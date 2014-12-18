@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @quandary.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @quandary.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @quandary.rating %>
+</p>
+
+<%= link_to 'Edit', edit_quandary_path(@quandary) %> |
+<%= link_to 'Back', quandaries_path %>

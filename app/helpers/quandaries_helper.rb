@@ -1,0 +1,2 @@
+module QuandariesHelper
+end
