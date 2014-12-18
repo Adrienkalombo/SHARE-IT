@@ -1,5 +1,6 @@
 class QuandariesController < ApplicationController
   before_action :set_quandary, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /quandaries
   # GET /quandaries.json
@@ -14,7 +15,7 @@ class QuandariesController < ApplicationController
 
   # GET /quandaries/new
   def new
-    @quandary = Quandary.new
+    @quandary = current_user.quandaries.build
   end
 
   # GET /quandaries/1/edit
@@ -24,7 +25,7 @@ class QuandariesController < ApplicationController
   # POST /quandaries
   # POST /quandaries.json
   def create
-    @quandary = Quandary.new(quandary_params)
+    @quandary= current_user.quandaries.build(quandary_params)
 
     respond_to do |format|
       if @quandary.save
