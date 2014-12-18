@@ -13,6 +13,7 @@
   <tbody>
     <% @quandaries.each do |quandary| %>
       <tr>
+        <td><%=image_tag quandary.image.url(:medium) %></td>
         <td><%= quandary.title %></td>
         <td><%= quandary.description %></td>
         <td><%= quandary.rating %></td>

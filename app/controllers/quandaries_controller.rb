@@ -70,6 +70,6 @@ class QuandariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quandary_params
-      params.require(:quandary).permit(:title, :description, :rating)
+      params.require(:quandary).permit(:title, :description, :rating, :image)
     end
 end
